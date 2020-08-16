@@ -1,0 +1,80 @@
+messages:
+
+  core:
+    console_plugin_enabled: "&aCauldronSpells successfully enabled !"
+    console_plugin_disabled: "&aCauldronSpells successfully disabled !"
+    console_plugin_reloaded: "&aCauldronSpells successfully reloaded !"
+
+  commands:
+    plugin_reloaded: "&aCauldronSpells configuration has been successfully reloaded !"
+    config_reset: "&aCauldronSpells configuration has been successfully reset!"
+    successfully_auto_given_spell: "&aYou successfully given a &e%spell% &aspell to yourself !"
+    successfully_given_spell: "&aYou successfully given a &e%spell%&a spell to &e%player%&a"
+    spell_received: "&aA &e%spell%&a spell was added to your inventory !"
+    please_re_type: "&ePlease re-type the command to confirm or type &l/cspell cancel&e to cancel. &6This pending command will expire in 30 seconds."
+    command_cancelled: "&aCommand successfully cancelled. Nothing happened"
+
+
+  errors:
+    no_perm: "&cSorry, you're lacking the permission node :&e %node% &c!"
+    cauldron_must_be_full: "&cThe cauldron must be full to be able to handle a spell !"
+    invalid_args: "&cSorry, command not recognized. Type &e/cauldronspells help&c to get a list of available commands."
+    not_a_spell: "&cThe spell&e %spell% &cdoesn't exists."
+    player_only_command: "&cSorry, but this command is only available to players !"
+    player_not_online: "&cSorry, but the player&e %player% &cis not online."
+    no_pending_commands: "&cYou don't have any pending command to cancel !"
+    cauldron_already_in_use: "&cThis cauldron isn't able to handle two spells at the same time !"
+
+permissions:
+  per_spell_permission: false
+  help_command: "cauldronspells.help"
+  reload_command: "cauldronspells.reload"
+  reset_command: "cauldronspells.reset"
+  give: "cauldronspells.give"
+  giveself: "cauldronspells.give.self"
+  ###############################################################################################################
+  #                THE SECTION BELOW IS USED ONLY IF per_spell_permission IS TRUE !                             #
+  ###############################################################################################################
+  spells:
+    strength:
+      give: "cauldronspells.strength.give"
+      use: "cauldronspells.strength.use"
+      giveself: "cauldronspells.strength.give.self"
+    fly:
+      give: "cauldronspells.fly.give"
+      use: "cauldronspells.fly.use"
+      giveself: "cauldronspells.fly.give.self"
+
+
+spells:
+  cauldron_spell_item: ENCHANTED_BOOK
+  success_rate_min: 60
+  success_rate_max: 98
+
+  strength:
+    item_name: "&r&l&k#&r &d&lStrength Spell &r&l&k#"
+    lore:
+      - "&e&lGives you strength III effect !"
+      - ""
+      - "&a&lSuccess rate &r: &a%success_rate%%"
+      - "&c&lDestroy rate &r: &c%destroy_rate%%"
+      - ""
+      - "&aRight click on a cauldron to use this spell"
+    duration_in_minutes: 60
+    spell_success_message: "&6After a change in your DNA, you gained a superhuman strength for &e%duration% &6minutes !"
+    spell_failed_message: "&cGamma radiations doesn't work for everyone ;)"
+    potion_amplifier: 2
+
+  fly:
+    item_name: "&r&l&k#&r &d&lFlight Spell &r&l&k#"
+    lore:
+      - "&e&lAllows you to fly !"
+      - ""
+      - "&a&lSuccess rate &r: &a%success_rate%%"
+      - "&c&lDestroy rate &r: &c%destroy_rate%%"
+      - ""
+      - "&aRight click on a cauldron to use this spell"
+    duration_in_minutes: 10
+    spell_success_message: "&6Wingardium Leviosa ! &6You can now fly for &e%duration% &6minutes !"
+    spell_failed_message: "&cIt's leviÔsa, not leviosaaa !"
+    already_flying_message: "&cYou already can fly !"

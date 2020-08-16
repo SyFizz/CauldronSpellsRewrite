@@ -1,0 +1,11 @@
+name: CauldronSpells
+author: SyFizz_
+version: 0.0.1
+main: io.github.syfizz.cauldronspellsrewrite.CauldronSpellsRewrite
+commands:
+  cauldronspells:
+    description: Main command of the plugin
+    usage: Incorrect Usage. Type /cauldronspells help to get a list of available commands.
+    aliases:
+      - cauldronspell
+      - cspell
