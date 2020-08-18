@@ -75,6 +75,6 @@ spells:
       - ""
       - "&aRight click on a cauldron to use this spell"
     duration_in_minutes: 10
-    spell_success_message: "&6Wingardium Leviosa ! &6You can now fly for &e%duration% &6minutes !"
-    spell_failed_message: "&cIt's leviÔsa, not leviosaaa !"
-    already_flying_message: "&cYou already can fly !"
+    spell_success_message: "&6Red Bull gives you wings ! &6You can now fly for &e%duration% &6minutes !"
+    spell_failed_message: "&cNo Red Bull, no wings !"
+    already_flying_message: "&cYou already drunk Red Bull !"
