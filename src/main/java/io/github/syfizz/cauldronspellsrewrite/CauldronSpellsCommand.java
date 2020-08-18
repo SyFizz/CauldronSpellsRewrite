@@ -38,7 +38,7 @@ public class CauldronSpellsCommand implements CommandExecutor {
                         helpMessage.add(colorMessage("&e/cauldronspells reload&a : &eReloads the configuration file."));
                         helpMessage.add(colorMessage("&e/cauldronspells reset&a : &eResets the configuration file."));
                         helpMessage.add(colorMessage("&e/cauldronspells give <spellname> &a: &eGive a spell to yourself."));
-                        helpMessage.add(colorMessage("&e/cauldronspells give <spellname> <player> &a: &eGive a spell to an online player."));
+                        helpMessage.add(colorMessage("&e/cauldronspells give <spellname> <player> &a: &eGive a spell to a player."));
                         helpMessage.add(colorMessage(" "));
                         helpMessage.add(colorMessage("&6&m&l-------------&r &6Made with ❤ by SyFizz_ &6&m&l-------------"));
 
