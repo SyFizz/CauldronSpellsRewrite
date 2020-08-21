@@ -6,6 +6,7 @@ CauldronSpells is a Spigot plugin using cauldrons to add spells in the game.
 ## Installation
 
 Download the latest release [here](https://github.com/SyFizz/SyMaintenance/releases) and put the jar files in your "plugins" folder.
+
 NOTE : Please download the both plugins, because PlayEffect is a dependency of CauldronSpells.
 
 ## Utilisation
