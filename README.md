@@ -30,6 +30,7 @@ By default, permissions nodes are :
 - `/cspell reset` : `cauldronspells.reset`
 - `/cspell give <spellname>` : `cauldronspells.give.self`
 - `/cspell give <spellname> <player>` : `cauldronspells.give`
+- Bypassing spells effects (like vanish effect) : `cauldronspells.bypass`
 
 ## Contribution
 Pull requests are welcome, but if you want to do a major change, please open an issue first to discuss about what you want to modify.
