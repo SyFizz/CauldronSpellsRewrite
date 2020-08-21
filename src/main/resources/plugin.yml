@@ -1,7 +1,8 @@
 name: CauldronSpells
 author: SyFizz_
-version: 0.0.1
+version: 0.0.2
 main: io.github.syfizz.cauldronspellsrewrite.CauldronSpellsRewrite
+depends: [PlayEffect]
 commands:
   cauldronspells:
     description: Main command of the plugin

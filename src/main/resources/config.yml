@@ -32,6 +32,7 @@ permissions:
   reset_command: "cauldronspells.reset"
   give: "cauldronspells.give"
   giveself: "cauldronspells.give.self"
+  bypass_effects: "cauldronspells.bypass"
   ###############################################################################################################
   #                THE SECTION BELOW IS USED ONLY IF per_spell_permission IS TRUE !                             #
   ###############################################################################################################
@@ -44,6 +45,10 @@ permissions:
       give: "cauldronspells.fly.give"
       use: "cauldronspells.fly.use"
       giveself: "cauldronspells.fly.give.self"
+    vanish:
+      give: "cauldronspells.vanish.give"
+      use: "cauldronspells.vanish.use"
+      giveself: "cauldronspells.vanish.give.self"
 
 
 spells:
@@ -78,3 +83,18 @@ spells:
     spell_success_message: "&6Red Bull gives you wings ! &6You can now fly for &e%duration% &6minutes !"
     spell_failed_message: "&cNo Red Bull, no wings !"
     already_flying_message: "&cYou already drunk Red Bull !"
+
+  vanish:
+    item_name: "&r&l&k#&r &d&lVanishing Spell &r&l&k#"
+    lore:
+      - "&e&lMakes you invisible to others players !"
+      - ""
+      - "&a&lSuccess rate &r: &a%success_rate%%"
+      - "&c&lDestroy rate &r: &c%destroy_rate%%"
+      - ""
+      - "&aRight click on a cauldron to use this spell"
+    duration_in_minutes: 10
+    spell_success_message: "&6Whoosh ! You're now invisible for &e%duration% &6minutes !"
+    spell_failed_message: "&cYou maybe can get more lucky next time !"
+    already_flying_message: "&cYou're already vanished !"
+    effect_expired_message: "&6Vanish expired ! You're not invisible anymore !"

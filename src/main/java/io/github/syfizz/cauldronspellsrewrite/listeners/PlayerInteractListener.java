@@ -3,6 +3,7 @@ package io.github.syfizz.cauldronspellsrewrite.listeners;
 import io.github.syfizz.cauldronspellsrewrite.CauldronSpellsRewrite;
 import io.github.syfizz.cauldronspellsrewrite.runnables.FlySpellRunnable;
 import io.github.syfizz.cauldronspellsrewrite.runnables.StrengthSpellRunnable;
+import io.github.syfizz.cauldronspellsrewrite.runnables.VanishSpellRunnable;
 import io.github.syfizz.cauldronspellsrewrite.utils.GlowEnchant;
 import org.bukkit.ChatColor;
 import org.bukkit.Material;
@@ -55,7 +56,16 @@ public class PlayerInteractListener implements Listener {
                                             } else {
                                                 event.getPlayer().sendMessage(main.getColoredMessage("messages.errors.no_perm").replaceAll("%node%", main.getConfig().getString("permissions.spells.strength.use")));
                                             }
+                                        } else if(itemName.equals(ChatColor.translateAlternateColorCodes('&', main.getConfig().getString("spells.vanish.item_name")))){
+                                            if (event.getPlayer().hasPermission(main.getConfig().getString("permissions.spells.vanish.use"))) {
+                                                new VanishSpellRunnable(event.getPlayer(), main, chance, event.getClickedBlock(), 5).runTaskTimer(main, 0L, 20L);
+                                                event.getPlayer().getInventory().remove(event.getPlayer().getItemInHand());
+                                                event.getPlayer().updateInventory();
+                                            } else {
+                                                event.getPlayer().sendMessage(main.getColoredMessage("messages.errors.no_perm").replaceAll("%node%", main.getConfig().getString("permissions.spells.strength.use")));
+                                            }
                                         }
+
                                     } else {
                                         if (itemName.equals(ChatColor.translateAlternateColorCodes('&', main.getConfig().getString("spells.fly.item_name")))) {
                                             if(!event.getPlayer().getAllowFlight()) {
@@ -69,6 +79,14 @@ public class PlayerInteractListener implements Listener {
                                             new StrengthSpellRunnable(event.getPlayer(), main, chance, event.getClickedBlock(), 5).runTaskTimer(main, 0L, 20L);
                                             event.getPlayer().getInventory().remove(event.getPlayer().getItemInHand());
                                             event.getPlayer().updateInventory();
+                                        } else if(itemName.equals(ChatColor.translateAlternateColorCodes('&', main.getConfig().getString("spells.vanish.item_name")))){
+                                            if (event.getPlayer().hasPermission(main.getConfig().getString("permissions.spells.vanish.use"))) {
+                                                new VanishSpellRunnable(event.getPlayer(), main, chance, event.getClickedBlock(), 5).runTaskTimer(main, 0L, 20L);
+                                                event.getPlayer().getInventory().remove(event.getPlayer().getItemInHand());
+                                                event.getPlayer().updateInventory();
+                                            } else {
+                                                event.getPlayer().sendMessage(main.getColoredMessage("messages.errors.no_perm").replaceAll("%node%", main.getConfig().getString("permissions.spells.strength.use")));
+                                            }
                                         }
                                     }
                                 } else {
