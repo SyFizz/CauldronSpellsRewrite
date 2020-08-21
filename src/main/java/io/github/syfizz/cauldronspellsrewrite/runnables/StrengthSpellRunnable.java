@@ -15,9 +15,9 @@ import java.util.Random;
 import static io.github.syfizz.cauldronspellsrewrite.CauldronSpellsRewrite.getInUseCauldrons;
 
 public class StrengthSpellRunnable extends BukkitRunnable {
-    CauldronSpellsRewrite main;
-    Player player;
-    Block block;
+    private CauldronSpellsRewrite main;
+    private Player player;
+    private Block block;
     private int time;
     private int chance;
     public StrengthSpellRunnable(Player player, CauldronSpellsRewrite main, int chance, Block block, int time)

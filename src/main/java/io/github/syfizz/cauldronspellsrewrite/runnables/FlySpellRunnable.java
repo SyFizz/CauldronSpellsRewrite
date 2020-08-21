@@ -41,7 +41,7 @@ public class FlySpellRunnable extends BukkitRunnable {
                 player.setAllowFlight(true);
                 Bukkit.getServer().getScheduler().runTaskLater(main, () -> {
                     player.setAllowFlight(false);
-                    CauldronSpellsRewrite.getFALLINGPLAYERS().add(player.getUniqueId());
+                    CauldronSpellsRewrite.getFallingPlayers().add(player.getUniqueId());
                     }, 20L * 60 * main.getConfig().getInt("spells.fly.duration_in_minutes"));
             } else {
                 double health = player.getHealth();

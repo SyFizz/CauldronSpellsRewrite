@@ -7,9 +7,7 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.entity.EntityDamageEvent;
 
-import java.util.UUID;
-
-import static io.github.syfizz.cauldronspellsrewrite.CauldronSpellsRewrite.getFALLINGPLAYERS;
+import static io.github.syfizz.cauldronspellsrewrite.CauldronSpellsRewrite.getFallingPlayers;
 
 public class PlayerDamageListener implements Listener {
     CauldronSpellsRewrite main;
@@ -22,9 +20,9 @@ public class PlayerDamageListener implements Listener {
     public void onPlayerDamage(EntityDamageEvent e){
         if(e.getEntity().getType() == EntityType.PLAYER && e.getCause() == EntityDamageEvent.DamageCause.FALL){
             Player player = (Player) e.getEntity();
-            if(getFALLINGPLAYERS().contains(player.getUniqueId())){
+            if(getFallingPlayers().contains(player.getUniqueId())){
                 e.setCancelled(true);
-                getFALLINGPLAYERS().remove(player.getUniqueId());
+                getFallingPlayers().remove(player.getUniqueId());
             }
         }
     }

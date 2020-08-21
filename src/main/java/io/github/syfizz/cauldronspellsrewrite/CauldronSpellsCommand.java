@@ -17,7 +17,11 @@ import static io.github.syfizz.cauldronspellsrewrite.CauldronSpellsRewrite.*;
 
 public class CauldronSpellsCommand implements CommandExecutor {
 
-    private final CauldronSpellsRewrite main = CauldronSpellsRewrite.getInstance();
+    private CauldronSpellsRewrite main;
+
+    public CauldronSpellsCommand(CauldronSpellsRewrite main) {
+        this.main = main;
+    }
 
     @Override
     public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
@@ -65,8 +69,8 @@ public class CauldronSpellsCommand implements CommandExecutor {
                     if(sender.hasPermission(main.getConfig().getString("permissions.reset_command"))){
                         if(senderIsAPlayer){
                             Player player = (Player) sender;
-                            if(getRESETCONFIRM().contains(player.getUniqueId())) {
-                                getRESETCONFIRM().remove(player.getUniqueId());
+                            if(getInResetPlayers().contains(player.getUniqueId())) {
+                                getInResetPlayers().remove(player.getUniqueId());
                                 File file = new File(main.getDataFolder(), "config.yml");
                                 file.delete();
                                 main.saveDefaultConfig();
@@ -74,10 +78,10 @@ public class CauldronSpellsCommand implements CommandExecutor {
                                 sender.sendMessage(main.getColoredMessage("messages.commands.config_reset"));
                             } else {
                                 sender.sendMessage(main.getColoredMessage("messages.commands.please_re_type"));
-                                getRESETCONFIRM().add(player.getUniqueId());
+                                getInResetPlayers().add(player.getUniqueId());
                                 Bukkit.getServer().getScheduler().runTaskLater(main, () -> {
-                                    if(getRESETCONFIRM().contains(player.getUniqueId())) {
-                                        getRESETCONFIRM().remove(player.getUniqueId());
+                                    if(getInResetPlayers().contains(player.getUniqueId())) {
+                                        getInResetPlayers().remove(player.getUniqueId());
                                     }
                                 }, 20L * 30);
                             }
@@ -90,12 +94,12 @@ public class CauldronSpellsCommand implements CommandExecutor {
                 } else if (args[0].equalsIgnoreCase("cancel")){
                     if(senderIsAPlayer){
                         Player player = (Player) sender;
-                        if(getRESETCONFIRM().contains(player.getUniqueId())) {
-                            getRESETCONFIRM().remove(player.getUniqueId());
+                        if(getInResetPlayers().contains(player.getUniqueId())) {
+                            getInResetPlayers().remove(player.getUniqueId());
                             sender.sendMessage(main.getColoredMessage("messages.commands.command_cancelled"));
                         } else {
                             sender.sendMessage(main.getColoredMessage("messages.errors.no_pending_commands"));
-                            getRESETCONFIRM().add(player.getUniqueId());
+                            getInResetPlayers().add(player.getUniqueId());
                         }
                     } else {
                         sender.sendMessage(main.getColoredMessage("messages.errors.player_only_command"));
