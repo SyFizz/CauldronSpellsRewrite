@@ -9,9 +9,9 @@ Download the latest release [here](https://github.com/SyFizz/SyMaintenance/relea
 
 NOTE : Please download the both plugins, because PlayEffect is a dependency of CauldronSpells.
 
-## Utilisation
+## Usage
 
-### Commandes :
+### Commands :
 The main command of the plugin is `/cspell`
 
 - `/cspell reload` Reloads the configuration file.
